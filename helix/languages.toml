@@ -1,0 +1,28 @@
+
+[[language]]
+name = "python"
+auto-format = true
+language-servers = ["pylsp","pyright","ruff"]
+formatter = {command = "black" , args = ["--line-length","88","--quiet","-"]}
+
+[language.debugger]
+name = "debugpy"
+transport = "stdio"
+command = "python3"
+args = ["-m",  "debugpy.adapter"]
+
+[language-server.pylsp.config.pylsp]
+plugins.black.enabled = true
+plugins.pylint.enabled = true
+plugins.pyflakes.enabled = true
+plugins.pyls_mypy.enabled = true
+plugins.pyls_mypy.live_mode = false
+plugins.isort.enabled = true
+plugins.rope_autoimport.enabled = true
+plugins.ruff.enabled = true
+
+[[language.debugger.templates]]
+name = "source"
+request = "launch"
+completion = [ { name = "entrypoint", completion = "filename", default = "." } ]
+args = { mode = "debug", program = "{0}" }
