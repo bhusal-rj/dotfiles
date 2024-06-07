@@ -1,9 +1,26 @@
+[[language]]
+name = "tsx"
+language-servers = [ "typescript-language-server","tailwindcss-ls"]
+formatter = { command = "prettier" , args = ["--parser", "typescript"]}
+file-types = ["tsx", "ts"]
+auto-format = true
+
+[[language]]
+name = "html"
+language-servers = [ "tailwindcss-ls", "vscode-html-language-server" ]
+
+[[language]]
+name = "css"
+language-servers = [ "vscode-css-language-server", "tailwindcss-ls" ]
+
+
 
 [[language]]
 name = "python"
 auto-format = true
 language-servers = ["pylsp","pyright","ruff"]
 formatter = {command = "black" , args = ["--line-length","88","--quiet","-"]}
+
 
 [language.debugger]
 name = "debugpy"
