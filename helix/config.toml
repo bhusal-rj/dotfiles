@@ -32,6 +32,7 @@ display-inlay-hints = true
 
 [editor.smart-tab]
 supersede-menu = true
+enable = false
 
 [editor.statusline]
 mode.normal = "NORMAL"
